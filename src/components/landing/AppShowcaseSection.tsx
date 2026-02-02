@@ -1,6 +1,6 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Play, MessageCircle, Star, Users } from "lucide-react";
-import iphoneMockup from "@/assets/iphone-mockup.png";
+import appShowcaseMockup from "@/assets/app-showcase-mockup.png";
 
 const features = [
   { icon: Play, title: "Treinos com Profissionais", description: "Profissionais te guiam em cada movimento" },
@@ -45,7 +45,7 @@ export const AppShowcaseSection = () => {
             <div className="relative mx-auto max-w-xs">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-green-light blur-3xl" />
               <img 
-                src={iphoneMockup} 
+                src={appShowcaseMockup} 
                 alt="ShapeOn App" 
                 className="relative z-10 mx-auto drop-shadow-2xl"
               />

@@ -15,8 +15,8 @@ export const HeroSection = () => {
       {/* Decorative gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-light/30 via-transparent to-transparent" />
       
-      <div className="container-custom relative">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="container-custom relative px-6 sm:px-8">
+        <div className="grid items-center justify-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Column - Text */}
           <div className="text-center lg:text-left">
             <AnimatedSection>

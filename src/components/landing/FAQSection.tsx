@@ -27,10 +27,6 @@ const faqs = [
     question: "Posso cancelar a qualquer momento?",
     answer: "Sim! Você pode cancelar sua assinatura quando quiser, diretamente pela plataforma. Sem taxa de cancelamento, sem burocracia.",
   },
-  {
-    question: "O ShapeOn inclui dieta?",
-    answer: "Incluímos dicas de nutrição inteligente e receitas saudáveis, mas não prescrevemos dietas restritivas. Nosso foco é criar hábitos sustentáveis que você consiga manter a longo prazo.",
-  },
 ];
 
 export const FAQSection = () => {

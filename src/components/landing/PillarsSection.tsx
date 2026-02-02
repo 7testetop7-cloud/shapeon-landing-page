@@ -1,13 +1,13 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { Timer, Flower, Brain, Users, Trophy, Apple } from "lucide-react";
+import { Timer, Brain, Users, Trophy, Apple, Utensils } from "lucide-react";
 
 const pillars = [
   { icon: Timer, title: "Treinos HIIT", description: "Máxima queima em mínimo tempo" },
-  { icon: Flower, title: "Yoga & Alongamento", description: "Flexibilidade e relaxamento" },
   { icon: Brain, title: "Mindset Positivo", description: "Mentalidade de vencedor" },
-  { icon: Users, title: "Comunidade VIP", description: "Apoio de milhares de membros" },
   { icon: Trophy, title: "Desafios Semanais", description: "Metas que motivam" },
   { icon: Apple, title: "Nutrição Inteligente", description: "Dicas práticas e fáceis" },
+  { icon: Users, title: "Comunidade VIP", description: "Apoio de milhares de membros" },
+  { icon: Utensils, title: "Receitas Únicas", description: "Doces e salgados sem sair da dieta" },
 ];
 
 export const PillarsSection = () => {
@@ -16,7 +16,7 @@ export const PillarsSection = () => {
       <div className="container-custom">
         <AnimatedSection className="mb-12 text-center">
           <h2 className="heading-lg mb-4 text-foreground">
-            Os 6 Pilares do <span className="text-gradient">Método ShapeOn</span>
+            Os 5 Pilares do <span className="text-gradient">Método ShapeOn</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Uma abordagem completa para sua transformação

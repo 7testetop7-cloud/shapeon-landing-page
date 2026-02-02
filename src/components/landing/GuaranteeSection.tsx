@@ -12,11 +12,11 @@ export const GuaranteeSection = () => {
             </div>
             <div className="text-center md:text-left">
               <h3 className="mb-3 text-2xl font-bold text-foreground md:text-3xl">
-                Garantia Incondicional de 30 Dias
+                Garantia Incondicional de 10 Dias
               </h3>
               <p className="text-muted-foreground">
                 Se você não gostar dos treinos, das mensagens motivacionais ou de qualquer aspecto da plataforma, 
-                devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. 
+                devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
                 <strong className="text-foreground"> Você não tem nada a perder.</strong>
               </p>
             </div>

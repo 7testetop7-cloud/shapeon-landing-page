@@ -1,11 +1,11 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { Play, Headphones, MessageCircle, Star } from "lucide-react";
+import { Play, MessageCircle, Star, Users } from "lucide-react";
 import iphoneMockup from "@/assets/iphone-mockup.png";
 
 const features = [
-  { icon: Play, title: "Aulas com Personal", description: "Profissionais te guiam em cada movimento" },
-  { icon: Headphones, title: "Áudios Motivacionais", description: "Mensagens diárias para blindar sua mente" },
-  { icon: MessageCircle, title: "Grupo de Apoio", description: "Comunidade ativa 24h por dia" },
+  { icon: Play, title: "Treinos com Profissionais", description: "Profissionais te guiam em cada movimento" },
+  { icon: MessageCircle, title: "Mensagens Motivacionais", description: "Mensagens diárias para blindar sua mente" },
+  { icon: Star, title: "Grupo de Apoio", description: "Comunidade ativa 24h por dia" },
   { icon: Star, title: "Conteúdo Exclusivo", description: "Novos treinos toda semana" },
 ];
 

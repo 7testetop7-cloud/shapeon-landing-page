@@ -18,7 +18,7 @@ export const HeroSection = () => {
       <div className="container-custom relative px-6 sm:px-8">
         <div className="grid items-center justify-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Column - Text */}
-          <div className="text-center lg:text-left">
+          <div className="w-full max-w-full overflow-hidden text-center lg:text-left">
             <AnimatedSection>
               <span className="mb-4 inline-block rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground">
                 🚀 Método 2026
@@ -26,14 +26,14 @@ export const HeroSection = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={0.1}>
-              <h1 className="heading-xl mb-6 text-foreground">
+              <h1 className="heading-xl mb-6 break-words text-foreground">
                 Controle sua rotina, queime gordura e{" "}
                 <span className="text-gradient">sinta-se bem</span> com o seu corpo em 2026!
               </h1>
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+              <p className="mb-8 text-base text-muted-foreground sm:text-lg md:text-xl">
                 Com o ShapeOn, você acessa treinos rápidos, desafios diários e mensagens que blindam sua mente. 
                 <strong className="text-foreground"> Emagreça sem dietas malucas.</strong>
               </p>
@@ -42,7 +42,7 @@ export const HeroSection = () => {
             <AnimatedSection delay={0.3}>
               <Button 
                 size="lg" 
-                className="animate-pulse-glow w-full rounded-2xl bg-primary px-8 py-7 text-lg font-bold text-primary-foreground shadow-soft-lg transition-all hover:bg-primary-dark hover:shadow-soft-xl sm:w-auto"
+                className="animate-pulse-glow w-full max-w-full rounded-2xl bg-primary px-6 py-6 text-sm font-bold text-primary-foreground shadow-soft-lg transition-all hover:bg-primary-dark hover:shadow-soft-xl sm:px-8 sm:py-7 sm:text-lg sm:w-auto"
               >
                 QUERO EMAGRECER DE FORMA SAUDÁVEL
               </Button>

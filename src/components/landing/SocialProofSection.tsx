@@ -3,6 +3,9 @@ import { BadgeCheck } from "lucide-react";
 import transformationMarina from "@/assets/transformation-marina.png";
 import transformationCarlos from "@/assets/transformation-carlos.png";
 import transformationAna from "@/assets/transformation-ana.png";
+import chatScreenshotWoman from "@/assets/chat-screenshot-woman.jpg";
+import chatScreenshot1 from "@/assets/chat-screenshot-1.jpg";
+import chatScreenshot2 from "@/assets/chat-screenshot-2.jpg";
 
 const testimonials = [
   { name: "Marina S.", location: "São Paulo", result: "-12kg em 3 meses", image: transformationMarina },
@@ -51,6 +54,38 @@ export const SocialProofSection = () => {
             </AnimatedSection>
           ))}
         </div>
+        
+        {/* Chat Screenshots Section */}
+        <AnimatedSection className="mt-12">
+          <div className="grid gap-4 md:grid-cols-2 lg:gap-6">
+            {/* Left - Woman photo chat screenshot */}
+            <div className="overflow-hidden rounded-2xl shadow-soft">
+              <img 
+                src={chatScreenshotWoman} 
+                alt="Depoimento de usuária" 
+                className="h-full w-full object-cover"
+              />
+            </div>
+            
+            {/* Right - Two stacked screenshots */}
+            <div className="flex flex-col gap-4">
+              <div className="overflow-hidden rounded-2xl shadow-soft">
+                <img 
+                  src={chatScreenshot1} 
+                  alt="Depoimento de usuária" 
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-2xl shadow-soft">
+                <img 
+                  src={chatScreenshot2} 
+                  alt="Depoimento de usuária" 
+                  className="w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

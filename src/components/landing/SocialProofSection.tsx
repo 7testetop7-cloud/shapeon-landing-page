@@ -1,11 +1,13 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { BadgeCheck } from "lucide-react";
-import transformationImage from "@/assets/transformation-placeholder.png";
+import transformationMarina from "@/assets/transformation-marina.png";
+import transformationCarlos from "@/assets/transformation-carlos.png";
+import transformationAna from "@/assets/transformation-ana.png";
 
 const testimonials = [
-  { name: "Marina S.", location: "São Paulo", result: "-12kg em 3 meses" },
-  { name: "Carlos R.", location: "Rio de Janeiro", result: "-8kg em 2 meses" },
-  { name: "Ana Paula", location: "Belo Horizonte", result: "-15kg em 4 meses" },
+  { name: "Marina S.", location: "São Paulo", result: "-12kg em 3 meses", image: transformationMarina },
+  { name: "Carlos R.", location: "Rio de Janeiro", result: "-8kg em 2 meses", image: transformationCarlos },
+  { name: "Ana Paula", location: "Belo Horizonte", result: "-15kg em 4 meses", image: transformationAna },
 ];
 
 export const SocialProofSection = () => {
@@ -27,7 +29,7 @@ export const SocialProofSection = () => {
               <div className="card-hover group overflow-hidden rounded-2xl bg-card shadow-soft">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
-                    src={transformationImage} 
+                    src={testimonial.image} 
                     alt={`Transformação de ${testimonial.name}`}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

@@ -56,9 +56,11 @@ export const PricingSection = () => {
                 ))}
               </ul>
               
-              <Button className="animate-pulse-glow w-full rounded-xl bg-primary py-6 text-base font-bold text-primary-foreground hover:bg-primary-dark">
-                COMEÇAR AGORA
-              </Button>
+              <a href="https://www.ggcheckout.com/checkout/v3/7RUumchQQBkJrSTF98AZ" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button className="animate-pulse-glow w-full rounded-xl bg-primary py-6 text-base font-bold text-primary-foreground hover:bg-primary-dark">
+                  COMEÇAR AGORA
+                </Button>
+              </a>
             </div>
           </AnimatedSection>
         </div>

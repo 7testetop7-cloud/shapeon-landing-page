@@ -15,7 +15,7 @@ const testimonials = [
 
 export const SocialProofSection = () => {
   return (
-    <section className="section-padding bg-secondary">
+    <section id="social-proof" className="section-padding bg-secondary">
       <div className="container-custom">
         <AnimatedSection className="mb-12 text-center">
           <h2 className="heading-lg mb-4 text-foreground">

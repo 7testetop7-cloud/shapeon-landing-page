@@ -40,12 +40,14 @@ export const HeroSection = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={0.3}>
-              <Button 
-                size="lg" 
-                className="animate-pulse-glow w-full max-w-full rounded-2xl bg-primary px-6 py-6 text-sm font-bold text-primary-foreground shadow-soft-lg transition-all hover:bg-primary-dark hover:shadow-soft-xl sm:px-8 sm:py-7 sm:text-lg sm:w-auto"
-              >
-                QUERO EMAGRECER DE FORMA SAUDÁVEL
-              </Button>
+              <a href="#social-proof">
+                <Button 
+                  size="lg" 
+                  className="animate-pulse-glow w-full max-w-full rounded-2xl bg-primary px-6 py-6 text-sm font-bold text-primary-foreground shadow-soft-lg transition-all hover:bg-primary-dark hover:shadow-soft-xl sm:px-8 sm:py-7 sm:text-lg sm:w-auto"
+                >
+                  QUERO EMAGRECER DE FORMA SAUDÁVEL
+                </Button>
+              </a>
             </AnimatedSection>
             
             <AnimatedSection delay={0.4}>

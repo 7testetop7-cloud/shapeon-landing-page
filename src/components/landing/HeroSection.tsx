@@ -1,9 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { Shield, Zap, Heart } from "lucide-react";
-import iphoneMockup from "@/assets/iphone-mockup.png";
+import { Shield, Zap, Heart, Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 export const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(videoRef.current.muted);
+  };
+
   const trustItems = [
     { icon: Zap, text: "Acesso Imediato" },
     { icon: Shield, text: "Compra Segura" },
@@ -12,7 +39,6 @@ export const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-background section-padding">
-      {/* Decorative gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-light/30 via-transparent to-transparent" />
       
       <div className="container-custom relative px-6 sm:px-8">
@@ -64,41 +90,34 @@ export const HeroSection = () => {
             </AnimatedSection>
           </div>
           
-          {/* Right Column - Image */}
+          {/* Right Column - VSL Video */}
           <AnimatedSection delay={0.2} className="relative">
-            <div className="relative mx-auto max-w-sm lg:max-w-md">
-              {/* Glow effect behind phone */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-green-light blur-3xl" />
-              
-              <img 
-                src={iphoneMockup} 
-                alt="ShapeOn App Interface" 
-                className="relative z-10 mx-auto animate-float drop-shadow-2xl"
+            <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl bg-black shadow-2xl">
+              <video
+                ref={videoRef}
+                src="/videos/vsl.mov"
+                autoPlay
+                muted
+                playsInline
+                className="w-full"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                style={{ pointerEvents: "none" }}
               />
-              
-              {/* Floating badges */}
-              <div className="absolute -left-4 top-1/4 z-20 rounded-2xl bg-card p-3 shadow-soft-lg md:-left-8">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent">
-                    <Zap className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Treino de hoje</p>
-                    <p className="text-sm font-bold text-foreground">15 min HIIT</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute -right-4 bottom-1/4 z-20 rounded-2xl bg-card p-3 shadow-soft-lg md:-right-8">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-light">
-                    <Heart className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Sequência</p>
-                    <p className="text-sm font-bold text-foreground">7 dias 🔥</p>
-                  </div>
-                </div>
+              {/* Controls overlay */}
+              <div className="absolute bottom-0 left-0 right-0 flex items-center gap-3 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <button
+                  onClick={togglePlay}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/30"
+                >
+                  {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                </button>
+                <button
+                  onClick={toggleMute}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/30"
+                >
+                  {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+                </button>
               </div>
             </div>
           </AnimatedSection>

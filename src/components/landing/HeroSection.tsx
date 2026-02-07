@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { Shield, Zap, Heart, Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { Shield, Zap, Heart, Pause, Play, Volume2, VolumeX, Maximize, Minimize } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 export const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -30,6 +32,23 @@ export const HeroSection = () => {
     videoRef.current.muted = !videoRef.current.muted;
     setIsMuted(videoRef.current.muted);
   };
+
+  const toggleFullscreen = () => {
+    if (!containerRef.current) return;
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleFsChange = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", handleFsChange);
+    return () => document.removeEventListener("fullscreenchange", handleFsChange);
+  }, []);
 
   const trustItems = [
     { icon: Zap, text: "Acesso Imediato" },
@@ -92,7 +111,7 @@ export const HeroSection = () => {
           
           {/* Right Column - VSL Video */}
           <AnimatedSection delay={0.2} className="relative">
-            <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl bg-black shadow-2xl">
+            <div ref={containerRef} className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl bg-black shadow-2xl">
               <video
                 ref={videoRef}
                 src="/videos/vsl.mov"
@@ -117,6 +136,13 @@ export const HeroSection = () => {
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/30"
                 >
                   {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+                </button>
+                <div className="flex-1" />
+                <button
+                  onClick={toggleFullscreen}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/30"
+                >
+                  {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
                 </button>
               </div>
             </div>

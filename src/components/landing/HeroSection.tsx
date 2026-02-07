@@ -111,7 +111,7 @@ export const HeroSection = () => {
           
           {/* Right Column - VSL Video */}
           <AnimatedSection delay={0.2} className="relative">
-            <div ref={containerRef} className="relative mx-auto w-full max-w-lg overflow-hidden rounded-2xl bg-black shadow-2xl">
+            <div ref={containerRef} className="relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-black shadow-2xl lg:max-w-md">
               <video
                 ref={videoRef}
                 src="/videos/vsl.mov"
